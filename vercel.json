@@ -1,38 +1,15 @@
 {
-    "version": 2,
-    "builds": [
+  "version": 2,
+  "builds": [
       {
-        "src": "./index.js",
-        "use": "@vercel/node"
+          "src": "./index.js",
+          "use": "@vercel/node"
       }
-    ],
-    "routes": [
+  ],
+  "routes": [
       {
-        "src": "/api/v1/tasks/state/66822904b65ecd40cd244473", 
-        "methods": ["PATCH"],
-        "headers": {
-          "Access-Control-Allow-Origin": "https://frontend-two-kohl-14.vercel.app",
-          "Access-Control-Allow-Methods": "PATCH, OPTIONS",
-          "Access-Control-Allow-Headers": "Content-Type, Authorization",
-          "Access-Control-Allow-Credentials": "true"
-        },
-        "dest": "/"
-      },
-      {
-        "src": "/api/v1/tasks/state/anotherpatchroute",  
-        "methods": ["PATCH"],
-        "headers": {
-          "Access-Control-Allow-Origin": "https://frontend-two-kohl-14.vercel.app",
-          "Access-Control-Allow-Methods": "PATCH, OPTIONS",
-          "Access-Control-Allow-Headers": "Content-Type, Authorization",
-          "Access-Control-Allow-Credentials": "true"
-        },
-        "dest": "/"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/"
+          "src": "/(.*)",
+          "dest": "/"
       }
-    ]
-  }
-  
+  ]
+}
