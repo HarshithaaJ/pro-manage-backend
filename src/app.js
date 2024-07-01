@@ -7,6 +7,14 @@ const app = express();
 //Using Required Middlewares
 
 //1. CORS
+const corsOptions = {
+      // Your frontend URL
+    methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS'],  // Allow specific methods
+    allowedHeaders: ['Content-Type', 'Authorization'],  // Allow specific headers
+    credentials: true  // If you need to support cookies or other credentials
+};
+
+app.use(cors(corsOptions));
 app.use(cors());
 
 //2. EXPRESS
