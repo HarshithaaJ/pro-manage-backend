@@ -7,14 +7,24 @@ const app = express();
 //Using Required Middlewares
 
 //1. CORS
-app.use(cors());
+const corsOptions = {
+    origin: 'https://pro-manage-frontend-drlu8qxst-harshithaajs-projects.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    preflightContinue: false,
+    optionsSuccessStatus: 204
+};
+app.use(cors(corsOptions));
 
 //2. EXPRESS
-app.use(express.json({limit: "16kb"}))
-app.use(express.urlencoded({extended: true, limit: "16kb"}))
+app.use(express.json({ limit: "16kb" }))
+app.use(express.urlencoded({ extended: true, limit: "16kb" }))
+
+// Handle preflight requests
+app.options('*', cors(corsOptions));
 
 //Health Api
-app.get("/api/v1/health", (_, res)=> {
+app.get("/api/v1/health", (_, res) => {
     res.status(200).json({
         status: "active",
         service: "Pro Manage Backend",
