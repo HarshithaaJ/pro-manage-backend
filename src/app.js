@@ -7,15 +7,7 @@ const app = express();
 //Using Required Middlewares
 
 //1. CORS
-const corsOptions = {
-    
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-    optionsSuccessStatus: 204,
- };
- 
- app.use(cors(corsOptions));
-// app.use(cors());
+app.use(cors());
 
 //2. EXPRESS
 app.use(express.json({limit: "16kb"}))
