@@ -8,7 +8,7 @@ const app = express();
 
 //1. CORS
 const corsOptions = {
-    origin: 'https://pro-manage-frontend-drlu8qxst-harshithaajs-projects.vercel.app',
+    origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     preflightContinue: false,
