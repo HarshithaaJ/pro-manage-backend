@@ -7,21 +7,21 @@ const app = express();
 //Using Required Middlewares
 
 //1. CORS
-const corsOptions = {
-    origin: '*',
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    preflightContinue: false,
-    optionsSuccessStatus: 204
-};
-app.use(cors(corsOptions));
+// const corsOptions = {
+//     origin: '*',
+//     methods: 'GET,POST,PUT,DELETE,PATCH,OPTIONS',
+//     allowedHeaders: ['Content-Type', 'Authorization'],
+//     preflightContinue: false,
+//     optionsSuccessStatus: 204
+// };
+app.use(cors());
 
 //2. EXPRESS
 app.use(express.json({ limit: "16kb" }))
 app.use(express.urlencoded({ extended: true, limit: "16kb" }))
 
 // Handle preflight requests
-app.options('*', cors(corsOptions));
+app.options('*', cors());
 
 //Health Api
 app.get("/api/v1/health", (_, res) => {
