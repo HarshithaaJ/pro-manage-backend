@@ -14,7 +14,7 @@
     "MongoDB",
     "Bcrypt"
   ],
-  "author": "Naman Goel",
+  "author": "Harshitha J",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
